@@ -35,6 +35,21 @@ module.exports = {
         'general-sans-bold-italic': ['GeneralSans-BoldItalic'],
         'general-sans-extralight-italic': ['GeneralSans-ExtralightItalic'],
       },
+      fontSize: {
+        h1: ['4rem', { letterSpacing: '-0.2rem' }],
+        h2: ['2rem', { lineHeight: '2rem', letterSpacing: '-0.1rem' }],
+        h3: ['1.5rem', { lineHeight: '1.8rem' }],
+        h4: ['1.25rem', { lineHeight: '1.5rem' }],
+        b1: ['1rem', { lineHeight: '1.4rem' }],
+        b2: ['0.875rem', { lineHeight: '1.225rem' }],
+        b3: ['0.75rem', { lineHeight: '1.05rem' }],
+      },
+      borderRadius: {
+        10: '0.625rem',
+      },
+      height: {
+        button: '3.375rem',
+      },
     },
   },
   plugins: [],

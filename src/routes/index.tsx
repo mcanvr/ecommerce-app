@@ -1,16 +1,28 @@
 import { useStyledComponent } from '@/hooks/useStyledComponent';
 import { Image } from 'expo-image';
+import { useRouter } from 'expo-router';
 import LottieView from 'lottie-react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StatusBar, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function SplashScreen() {
   const StyledImage = useStyledComponent(Image);
   const insets = useSafeAreaInsets();
+  const router = useRouter();
+
+  const handleOnboarding = () => {
+    router.replace('/onboarding');
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      handleOnboarding();
+    }, 2000);
+  }, []);
 
   return (
-    <React.Fragment>
+    <>
       <StatusBar barStyle="light-content" />
       <View className="flex-1 items-center justify-center bg-primary-900 gap-6 relative pt-safe pb-safe">
         <StyledImage
@@ -25,6 +37,6 @@ export default function SplashScreen() {
           style={{ width: 50, height: 50, position: 'absolute', bottom: insets.bottom + 100 }}
         />
       </View>
-    </React.Fragment>
+    </>
   );
 }
