@@ -7,4 +7,5 @@ export interface TextProps {
   variant: TextVariant;
   weight: TextWeight;
   className?: string;
+  onPress?: () => void;
 }
