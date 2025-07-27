@@ -2,10 +2,11 @@ import { cn } from '@/utils/classnames';
 import { Text as RNText } from 'react-native';
 import { TextProps } from './Text.types';
 
-export default function Text({ children, variant, weight, className }: TextProps) {
+export default function Text({ children, variant, weight, className, onPress }: TextProps) {
   return (
     <RNText
       className={cn(
+        'text-primary-900',
         {
           'text-h1': variant === 'h1',
           'text-h2': variant === 'h2',
@@ -16,10 +17,11 @@ export default function Text({ children, variant, weight, className }: TextProps
           'text-b3': variant === 'b3',
           'font-general-sans-semibold': weight === 'semibold',
           'font-general-sans-medium': weight === 'medium',
-          'font-general-sans-regular': weight === 'regular',
+          'font-general-sans': weight === 'regular',
         },
         className
-      )}>
+      )}
+      onPress={onPress}>
       {children}
     </RNText>
   );

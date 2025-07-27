@@ -1,6 +1,6 @@
 import { PressableProps } from 'react-native';
 
-export interface ButtonProps extends PressableProps {
+export interface ButtonProps extends Omit<PressableProps, 'className'> {
   text: string;
   state: 'primary' | 'secondary' | 'disabled';
   leftIcon?: React.ComponentType<any>;
